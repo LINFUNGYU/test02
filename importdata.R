@@ -121,8 +121,9 @@ all.data<-c()
 TSE_tw50_symbols_yahoo<-c()
 #
 symboli = "1101.TW"
-for (symboli in code50.tw) {
-  yx = show_condition(getSymbols(symboli, from = '2016-01-01', index.class = 'Date'))
+i=1
+for (i in 1:length (code50.tw)) {
+  yx = show_condition(getSymbols(code50.tw [i],from = '2016-01-01', index.class = 'Date'))
   Sys.sleep(0.2 + runif(1)/2) # 不要一直抓，讓系統短暫休息
   if(is.null(yx)){
     for (hx in seq(1)){
